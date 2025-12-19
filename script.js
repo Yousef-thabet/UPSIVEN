@@ -191,3 +191,40 @@ window.addEventListener(
 )
 
 console.log("Elite Elevators - Website loaded successfully!")
+
+// Contact form submission
+const contactForm = document.querySelector(".contact-form")
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const name = document.getElementById("name").value
+    const phone = document.getElementById("phone").value
+    const email = document.getElementById("email").value
+    const service = document.getElementById("service").value
+    const message = document.getElementById("message").value
+
+    // Create WhatsApp message
+    const whatsappMessage = `السلام عليكم،
+        
+الاسم: ${name}
+رقم الجوال: ${phone}
+البريد الإلكتروني: ${email}
+نوع الخدمة: ${service}
+
+الرسالة:
+${message}`
+
+    const whatsappNumber = "201066203571" // Replace with actual number
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank")
+
+    // Reset form
+    contactForm.reset()
+
+    // Show success message
+    alert("شكراً لتواصلك معنا! سيتم فتح واتساب الآن لإرسال رسالتك.")
+  })
+}

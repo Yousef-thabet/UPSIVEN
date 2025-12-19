@@ -17,13 +17,16 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Cairo", sans-serif;
   background-color: var(--black);
+  direction: rtl;
   color: var(--light-gold);
   overflow-x: hidden;
 }
-p,h3,h4,h5,h6{direction: rtl;}
 
+.section{
+  padding: 75px 0;
+}
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
@@ -39,7 +42,7 @@ html {
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-
+  direction: ltr;
 }
 
 .navbar.scrolled {
@@ -61,16 +64,18 @@ html {
   letter-spacing: 2px;
 }
 .navbar-nav{
-  direction:rtl
+  direction: rtl;
 }
 
 .navbar-nav .nav-link {
   color: var(--light-gold) !important;
   margin: 0 1rem;
+  padding: 0.5rem 1rem !important;
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
-  direction:rtl
+  
+  
 }
 
 .navbar-nav .nav-link::after {
@@ -255,11 +260,194 @@ html {
   border-radius: 15px;
   box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
 }
+/* Section Padding */
+.section-padding {
+  
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+
+}
+
+.section-header h2 {
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+/* Feature cards */
+
+.feature-card {
+  padding: 2rem;
+  background-color: var(--dark-gray);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+}
+
+.feature-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+ 
+}
+
+.feature-icon-wrapper i {
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.feature-card h4 {
+  color: #ffffff;
+  font-weight: 600;
+}
+.feature-card p{
+  
+  color: var(--light-gold) ;
+}
+/* service-section */
+.section-title {
+  color: #d4af37;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #aaa;
+  font-size: 15px;
+}
+
+.service-card {
+  background: #161616;
+  padding: 20px 15px;
+  border-radius: 10px;
+  text-align: center;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.service-card i {
+  font-size: 32px;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.service-card h5 {
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.service-card p {
+  color: #bbb;
+  font-size: 14px;
+  margin: 0;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Installation Section */
+
+.installation-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.installation-icon i {
+  font-size: 1.8rem;
+  color: #000000;
+}
+
+.installation-item h4 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.installation-item p {
+  margin: 0;
+  line-height: 1.7;
+}
+.installation img{
+  height: 600px;
+}
+
+/*maintenance*/
+
+
+.maintenance-section {
+  padding: 50px 0;
+  background: var(--black);
+}
+
+.maintenance-section .section-title {
+ color:white;
+  font-weight: 700;
+}
+
+
+
+.maintenance-list {
+  max-width: 800px;
+  margin: auto;
+}
+
+.maintenance-item {
+  display: flex;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #222;
+}
+
+.maintenance-item i {
+  font-size: 26px;
+  color: var(--gold);
+  min-width: 30px;
+}
+
+.maintenance-item h5 {
+  color: var(--light-gold);
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+
+.maintenance-item p {
+  
+  font-size: 14px;
+  margin: 0;
+}
 
 /* FAQ Section */
 .faq-section {
   padding: 100px 0;
-  background-color: var(--black);
+  background-color: var(--dark-gray);
 }
 
 .accordion {
@@ -277,7 +465,7 @@ html {
 }
 
 .accordion-button {
-  background-color: var(--dark-gray) !important;
+  background-color: var(--black) !important;
   color: var(--gold) !important;
   font-weight: 600;
   font-size: 1.2rem;
@@ -307,59 +495,152 @@ html {
   padding: 2rem;
 }
 
+/* Contact Section */
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon i {
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.contact-item h5 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  background: var(--gray-dark);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  background: var(--gray);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.1);
+  color: white;
+}
+
+.contact-form .form-control::placeholder {
+  color: #888888;
+}
+
+.contact-form .form-label {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-select option {
+  background: var(--black);
+  color: var(--gold);
+}
 /* Footer */
 .footer {
-  background-color: var(--black);
-  border-top: 2px solid var(--gold);
-  padding: 3rem 0 1rem;
-  color: var(--light-gold);
+  background: linear-gradient(180deg, #000000 0%, var(--gray-dark) 100%);
+  padding: 60px 0 20px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.footer h5 {
+.footer-title {
   color: var(--gold);
-  margin-bottom: 1.5rem;
   font-weight: 600;
-  text-transform: uppercase;
-  direction: ltr;
+  margin-bottom: 1.5rem;
 }
 
-.footer p,
-.footer a {
-  color: var(--light-gold);
+.footer-text {
+  color: #aaaaaa;
+  line-height: 1.8;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #aaaaaa;
   text-decoration: none;
   transition: all 0.3s ease;
-  
-}
-
-.footer a:hover {
-  color: var(--gold);
-  padding-left: 5px;
-}
-
-.social-icons a {
   display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+  padding-right: 5px;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  color: #aaaaaa;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact i {
+  color: var(--gold);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
   width: 40px;
   height: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: var(--gold);
-  color: var(--black);
+  background: var(--gray);
+  border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 50%;
-  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+.social-link:hover {
+  background: var(--gold);
+  color: #000000;
+  border-color: var(--gold);
+  transform: translateY(-3px);
 }
 
-.copyright {
-  text-align: center;
-  padding-top: 2rem;
-  margin-top: 2rem;
-  border-top: 1px solid var(--gold);
-  color: var(--light-gold);
+.footer-divider {
+  border-color: rgba(212, 175, 55, 0.2);
+  margin: 2rem 0 1rem;
+}
+
+.footer-copyright {
+  color: #888888;
+  font-size: 0.9rem;
 }
 
 /* WhatsApp Floating Button */
