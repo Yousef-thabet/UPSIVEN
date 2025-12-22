@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // Contact form submission
-const contactForm = document.getElementById("contactForm")
+const contactForm = document.querySelector(".contact-form")
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -92,21 +92,27 @@ if (contactForm) {
     const message = document.getElementById("message").value
 
     // Create WhatsApp message
-    const whatsappMessage = `مرحباً، أنا ${name}%0A
-الهاتف: ${phone}%0A
-البريد: ${email}%0A
-الخدمة المطلوبة: ${service}%0A
-الرسالة: ${message}`
+    const whatsappMessage = `السلام عليكم،
+        
+الاسم: ${name}
+رقم الجوال: ${phone}
+البريد الإلكتروني: ${email}
+نوع الخدمة: ${service}
 
-    // Replace with your WhatsApp number
-    const whatsappNumber = "966500000000"
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
+الرسالة:
+${message}`
+
+    const whatsappNumber = "201066203571" // Replace with actual number
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
     // Open WhatsApp
-    window.open(whatsappURL, "_blank")
+    window.open(whatsappUrl, "_blank")
 
     // Reset form
     contactForm.reset()
+
+    // Show success message
+    alert("شكراً لتواصلك معنا! سيتم فتح واتساب الآن لإرسال رسالتك.")
   })
 }
 
