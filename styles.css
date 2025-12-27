@@ -229,6 +229,9 @@ html {
   position: relative;
   padding-bottom: 20px;
 }
+.lead{
+  color: var(--light-gold);
+}
 
 .section-title::after {
   content: "";
