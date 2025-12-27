@@ -102,7 +102,7 @@ if (contactForm) {
 الرسالة:
 ${message}`
 
-    const whatsappNumber = "201066203571" // Replace with actual number
+    const whatsappNumber = "201028821669" // Replace with actual number
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
     // Open WhatsApp
